@@ -3,29 +3,35 @@
 
 import csv
 
-datafile = open('Python Developer Test Dataset.csv','r')
+def TotalMast():
+    datafile = open('Python Developer Test Dataset.csv','r')
 
-data = csv.DictReader(datafile, delimiter=',')
+    data = csv.DictReader(datafile, delimiter=',')
 
-no_of_masts = 0
+    no_of_masts = 0
 
-key = data.fieldnames[6] 
-names = []
+    key = data.fieldnames[6] 
+    names = []
 
-for row in data:
-    no_of_masts = no_of_masts + 1
-    names.append(row.get(key))
-result = {key: names}
+    for row in data:
+        no_of_masts = no_of_masts + 1
+        names.append(row.get(key))
+    result = {key: names}
 
-print(key)
-print("----------------------")
-print(names,sep = ",")
+    print(key)
+    print("----------------------")
+    print(names,sep = ",")
 
-print("Total Number of Masts") 
-print("----------------------")
-print (no_of_masts)
+    print("Total Number of Masts") 
+    print("----------------------")
+    print (no_of_masts)
 
-datafile.close()
+    datafile.close()
+    
+    return no_of_masts
+
+    
+    
 
 
 

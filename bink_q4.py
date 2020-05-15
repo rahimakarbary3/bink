@@ -4,22 +4,27 @@
 import csv
 import datetime
 
-datafile = open('Python Developer Test Dataset.csv','r')
+def TotalLease():
+    datafile = open('Python Developer Test Dataset.csv','r')
 
-data = csv.reader(datafile, delimiter=',')
-next(data)
+    data = csv.reader(datafile, delimiter=',')
+    next(data)
 
-start_date = (datetime.datetime.strptime("1 Jun 1999", "%d %b %Y"))
-end_date   = (datetime.datetime.strptime("31 Aug 2007", "%d %b %Y"))
+    start_date = (datetime.datetime.strptime("1 Jun 1999", "%d %b %Y"))
+    end_date   = (datetime.datetime.strptime("31 Aug 2007", "%d %b %Y"))
+    count = 0
 
-for item in data:
-    lease_start_date =(datetime.datetime.strptime(item[7], "%d %b %Y") )
-    #print("start:", start_date, "lease:", lease_start_date, "end", end_date)
-    if start_date < lease_start_date < end_date:
-        item[7] = ( datetime.datetime.strptime(item[7] , "%d %b %Y").strftime('%d/%m/%Y') )
-        print(item)
+    for item in data:
+        lease_start_date =(datetime.datetime.strptime(item[7], "%d %b %Y") )
+        #print("start:", start_date, "lease:", lease_start_date, "end", end_date)
+        if start_date < lease_start_date < end_date:
+            count = count + 1
+            item[7] = ( datetime.datetime.strptime(item[7] , "%d %b %Y").strftime('%d/%m/%Y') )
+            print(item)
 
-datafile.close()
+    datafile.close()
+
+    return count
 
     
 
