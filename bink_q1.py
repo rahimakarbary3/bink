@@ -9,7 +9,7 @@ def RentExtract():
 
     data = csv.reader(datafile, delimiter=',')
 
-    print(next(data, None))
+    next(data)
 
     sort = sorted(data,key= lambda x: float(x[10]))
 

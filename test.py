@@ -18,7 +18,7 @@ class TestQuestion2(unittest.TestCase):
         """
         Test that the total rent is correct
         """
-        result = bink_q2.TotalRent()
+        result = bink_q2.LeaseYear()
         expected = 46500
         self.assertEqual(expected, result)
 

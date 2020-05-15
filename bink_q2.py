@@ -3,7 +3,7 @@
 #    b. Output the total rent for all items in this list to the console
 import csv
 
-def TotalRent():
+def LeaseYear():
     datafile = open('Python Developer Test Dataset.csv','r')
 
     data = csv.reader(datafile, delimiter=',')
